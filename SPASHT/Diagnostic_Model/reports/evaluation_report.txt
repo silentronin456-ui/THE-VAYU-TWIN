@@ -1,0 +1,53 @@
+SPASHT DIAGNOSTIC XGBOOST MODEL EVALUATION REPORT
+======================================================================
+
+Dataset: 63 CSV files (567,000 samples)
+Class Count: 25 Unique Fault Classes
+Input Features: 63 Canonical Parameters
+
+Flight Split: 36 Train Flights (324,000 rows) / 27 Held-out Test Flights (243,000 rows)
+
+Overall Metrics:
+  Train Accuracy:       100.00%
+  Test Accuracy:        99.64%
+  Majority Baseline:    50.75%
+  Macro Precision:      0.9962
+  Macro Recall:         0.9929
+  Macro F1-Score:       0.9944
+  Weighted Precision:   0.9965
+  Weighted Recall:      0.9964
+  Weighted F1-Score:    0.9964
+
+Per-Class Detailed Classification Report:
+                                 precision    recall  f1-score   support
+
+           ALTERNATOR_1_FAILURE     0.9980    0.9998    0.9989      4915
+            BLOCKED_FUEL_FILTER     0.9998    0.9719    0.9856      4122
+          CASCADE_FLUID_THERMAL     1.0000    0.9998    0.9999      5000
+       CASCADE_MECHANICAL_FLUID     1.0000    1.0000    1.0000      7000
+     CASCADE_THERMAL_MECHANICAL     1.0000    0.9825    0.9912      6000
+            COOLANT_SYSTEM_LEAK     0.9995    0.9979    0.9987      3778
+              CRITICAL_OVERHEAT     0.9635    0.9995    0.9812      4352
+             ECU_LANE_A_FAILURE     1.0000    1.0000    1.0000      4504
+               ELEVATOR_BINDING     0.9796    0.9994    0.9894      5295
+              FUEL_PUMP_FAILURE     1.0000    1.0000    1.0000      3766
+         MAIN_BUS_SHORT_CIRCUIT     1.0000    1.0000    1.0000      4454
+                 MINOR_OVERHEAT     0.9704    1.0000    0.9850      4456
+                MINOR_VIBRATION     1.0000    1.0000    1.0000      3653
+              NORMAL_OPERATIONS     0.9965    1.0000    0.9982    123326
+             OAT_SENSOR_FAILURE     0.9998    1.0000    0.9999      4820
+                       OIL_LEAK     0.9983    0.9608    0.9792      4847
+            PITOT_TUBE_BLOCKAGE     0.9998    0.9978    0.9988      4491
+              RADIATOR_BLOCKAGE     0.9996    0.9136    0.9547      5024
+                SENSOR_GHOSTING     1.0000    1.0000    1.0000      8000
+               SEVERE_VIBRATION     1.0000    1.0000    1.0000      5351
+  SIMULTANEOUS_MECHANICAL_FLUID     1.0000    1.0000    1.0000      4999
+SIMULTANEOUS_THERMAL_ELECTRICAL     1.0000    1.0000    1.0000      4999
+          STUCK_CONTROL_SURFACE     0.9995    1.0000    0.9997      3640
+           TOTAL_SYSTEM_FAILURE     1.0000    1.0000    1.0000      8500
+      VIBRATION_GEARBOX_BEARING     1.0000    1.0000    1.0000      3708
+
+                       accuracy                         0.9964    243000
+                      macro avg     0.9962    0.9929    0.9944    243000
+                   weighted avg     0.9965    0.9964    0.9964    243000
+

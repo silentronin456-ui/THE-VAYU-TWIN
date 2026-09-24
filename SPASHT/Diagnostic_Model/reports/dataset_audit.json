@@ -1,0 +1,3502 @@
+{
+  "summary": {
+    "total_csv_files": 63,
+    "total_rows": 567000,
+    "total_null_values": 0,
+    "total_infinite_values": 0,
+    "total_duplicate_rows": 0,
+    "aws_dynamo_files_found": [],
+    "unique_fault_classes_count": 25,
+    "fault_classes": {
+      "MINOR_OVERHEAT": 9842,
+      "NORMAL_OPERATIONS": 327666,
+      "CRITICAL_OVERHEAT": 8751,
+      "COOLANT_SYSTEM_LEAK": 8816,
+      "RADIATOR_BLOCKAGE": 8795,
+      "PITOT_TUBE_BLOCKAGE": 9409,
+      "ELEVATOR_BINDING": 10153,
+      "OAT_SENSOR_FAILURE": 9538,
+      "ALTERNATOR_1_FAILURE": 9083,
+      "ECU_LANE_A_FAILURE": 8935,
+      "MAIN_BUS_SHORT_CIRCUIT": 8786,
+      "FUEL_PUMP_FAILURE": 7416,
+      "BLOCKED_FUEL_FILTER": 7892,
+      "OIL_LEAK": 8667,
+      "MINOR_VIBRATION": 8905,
+      "SEVERE_VIBRATION": 9872,
+      "VIBRATION_GEARBOX_BEARING": 7780,
+      "STUCK_CONTROL_SURFACE": 7698,
+      "CASCADE_THERMAL_MECHANICAL": 12000,
+      "CASCADE_MECHANICAL_FLUID": 14000,
+      "CASCADE_FLUID_THERMAL": 10000,
+      "SENSOR_GHOSTING": 16000,
+      "TOTAL_SYSTEM_FAILURE": 17000,
+      "SIMULTANEOUS_THERMAL_ELECTRICAL": 9998,
+      "SIMULTANEOUS_MECHANICAL_FLUID": 9998
+    },
+    "flight_phases": {
+      "CRUISE": 382830,
+      "CLIMB": 67200,
+      "DESCENT": 68880,
+      "WARMUP": 23310,
+      "LANDING": 18480,
+      "STARTUP": 3990,
+      "TAKEOFF": 2310
+    },
+    "physical_parameters_count": 53,
+    "physical_parameters": [
+      "env.oat",
+      "env.wind_vector",
+      "flight.airspeed_ktas",
+      "flight.barometric_altitude",
+      "flight.elevator_angle",
+      "flight.elevator_load",
+      "flight.rudder_angle",
+      "flight.rudder_load",
+      "flight.aileron_angle",
+      "flight.aileron_load",
+      "flight.flap_position",
+      "flight.landing_gear_status",
+      "flight.weight_on_wheels",
+      "nav.gps_lat",
+      "nav.gps_lon",
+      "nav.ground_speed",
+      "nav.heading",
+      "engine.rpm",
+      "propeller.rpm",
+      "engine.map",
+      "engine.cht_1",
+      "engine.cht_2",
+      "engine.cht_3",
+      "engine.cht_4",
+      "engine.egt_1",
+      "engine.egt_2",
+      "engine.egt_3",
+      "engine.egt_4",
+      "engine.oil_pressure",
+      "engine.oil_temp",
+      "engine.coolant_pressure",
+      "engine.coolant_temp",
+      "sensor.vibration_engine_mount_x",
+      "sensor.vibration_engine_mount_y",
+      "sensor.vibration_engine_mount_z",
+      "sensor.vibration_gearbox",
+      "sensor.magnetic_chip_detector_mcd",
+      "fuel.flow_rate",
+      "fuel.total_fuel",
+      "fuel.injector_pulse_width",
+      "fuel.pump_primary_status",
+      "fuel.pump_secondary_status",
+      "ignition.coil_voltage",
+      "ignition.spark_misfire_flags",
+      "engine.oil_scavenge_pump_rate",
+      "engine.water_pump_speed",
+      "electrical.main_bus_voltage",
+      "electrical.main_bus_current",
+      "electrical.alternator_1_current",
+      "electrical.alternator_2_current",
+      "electrical.ecu_lane_a_status",
+      "electrical.ecu_lane_b_status",
+      "electrical.sensor_reference_5v"
+    ],
+    "anomaly_scores_count": 3,
+    "anomaly_scores": [
+      "anomaly_score_thermal",
+      "anomaly_score_mechanical",
+      "anomaly_score_electrical"
+    ],
+    "schema_groups_count": 2
+  },
+  "schema_groups": [
+    {
+      "schema_name": "Standard 58-col with 'flight.phase'",
+      "column_count": 58,
+      "file_count": 49,
+      "sample_files": [
+        "data/diagnostic_dataset/Thermal Anomalies/flight_016_minor_overheat.csv",
+        "data/diagnostic_dataset/Thermal Anomalies/flight_017_minor_overheat.csv",
+        "data/diagnostic_dataset/Thermal Anomalies/flight_018_critical_overheat.csv"
+      ],
+      "first_column": "flight.phase",
+      "columns": [
+        "flight.phase",
+        "env.oat",
+        "env.wind_vector",
+        "flight.airspeed_ktas",
+        "flight.barometric_altitude",
+        "flight.elevator_angle",
+        "flight.elevator_load",
+        "flight.rudder_angle",
+        "flight.rudder_load",
+        "flight.aileron_angle",
+        "flight.aileron_load",
+        "flight.flap_position",
+        "flight.landing_gear_status",
+        "flight.weight_on_wheels",
+        "nav.gps_lat",
+        "nav.gps_lon",
+        "nav.ground_speed",
+        "nav.heading",
+        "engine.rpm",
+        "propeller.rpm",
+        "engine.map",
+        "engine.cht_1",
+        "engine.cht_2",
+        "engine.cht_3",
+        "engine.cht_4",
+        "engine.egt_1",
+        "engine.egt_2",
+        "engine.egt_3",
+        "engine.egt_4",
+        "engine.oil_pressure",
+        "engine.oil_temp",
+        "engine.coolant_pressure",
+        "engine.coolant_temp",
+        "sensor.vibration_engine_mount_x",
+        "sensor.vibration_engine_mount_y",
+        "sensor.vibration_engine_mount_z",
+        "sensor.vibration_gearbox",
+        "sensor.magnetic_chip_detector_mcd",
+        "fuel.flow_rate",
+        "fuel.total_fuel",
+        "fuel.injector_pulse_width",
+        "fuel.pump_primary_status",
+        "fuel.pump_secondary_status",
+        "ignition.coil_voltage",
+        "ignition.spark_misfire_flags",
+        "engine.oil_scavenge_pump_rate",
+        "engine.water_pump_speed",
+        "electrical.main_bus_voltage",
+        "electrical.main_bus_current",
+        "electrical.alternator_1_current",
+        "electrical.alternator_2_current",
+        "electrical.ecu_lane_a_status",
+        "electrical.ecu_lane_b_status",
+        "electrical.sensor_reference_5v",
+        "anomaly_score_thermal",
+        "anomaly_score_mechanical",
+        "anomaly_score_electrical",
+        "fault_label"
+      ]
+    },
+    {
+      "schema_name": "Cascade 58-col with 'flags' & interleaved CHT/EGT",
+      "column_count": 58,
+      "file_count": 14,
+      "sample_files": [
+        "data/diagnostic_dataset/spasht_official_cascades_58col/01_CASCADE_THERMAL_MECHANICAL_v1.csv",
+        "data/diagnostic_dataset/spasht_official_cascades_58col/01_CASCADE_THERMAL_MECHANICAL_v2.csv",
+        "data/diagnostic_dataset/spasht_official_cascades_58col/02_CASCADE_MECHANICAL_FLUID_v1.csv"
+      ],
+      "first_column": "flags",
+      "columns": [
+        "flags",
+        "env.oat",
+        "env.wind_vector",
+        "flight.airspeed_ktas",
+        "flight.barometric_altitude",
+        "flight.elevator_angle",
+        "flight.elevator_load",
+        "flight.rudder_angle",
+        "flight.rudder_load",
+        "flight.aileron_angle",
+        "flight.aileron_load",
+        "flight.flap_position",
+        "flight.landing_gear_status",
+        "flight.weight_on_wheels",
+        "nav.gps_lat",
+        "nav.gps_lon",
+        "nav.ground_speed",
+        "nav.heading",
+        "engine.rpm",
+        "propeller.rpm",
+        "engine.map",
+        "engine.cht_1",
+        "engine.egt_1",
+        "engine.cht_2",
+        "engine.egt_2",
+        "engine.cht_3",
+        "engine.egt_3",
+        "engine.cht_4",
+        "engine.egt_4",
+        "engine.oil_pressure",
+        "engine.oil_temp",
+        "engine.coolant_pressure",
+        "engine.coolant_temp",
+        "sensor.vibration_engine_mount_x",
+        "sensor.vibration_engine_mount_y",
+        "sensor.vibration_engine_mount_z",
+        "sensor.vibration_gearbox",
+        "sensor.magnetic_chip_detector_mcd",
+        "fuel.flow_rate",
+        "fuel.total_fuel",
+        "fuel.injector_pulse_width",
+        "fuel.pump_primary_status",
+        "fuel.pump_secondary_status",
+        "ignition.coil_voltage",
+        "ignition.spark_misfire_flags",
+        "engine.oil_scavenge_pump_rate",
+        "engine.water_pump_speed",
+        "electrical.main_bus_voltage",
+        "electrical.main_bus_current",
+        "electrical.alternator_1_current",
+        "electrical.alternator_2_current",
+        "electrical.ecu_lane_a_status",
+        "electrical.ecu_lane_b_status",
+        "electrical.sensor_reference_5v",
+        "anomaly_score_thermal",
+        "anomaly_score_mechanical",
+        "anomaly_score_electrical",
+        "fault_label"
+      ]
+    }
+  ],
+  "folder_summary": {
+    "Thermal Anomalies": {
+      "file_count": 8,
+      "total_rows": 72000,
+      "files": [
+        "flight_016_minor_overheat.csv",
+        "flight_017_minor_overheat.csv",
+        "flight_018_critical_overheat.csv",
+        "flight_019_critical_overheat.csv",
+        "flight_020_coolant_leak.csv",
+        "flight_021_coolant_leak.csv",
+        "flight_022_radiator_blockage.csv",
+        "flight_023_radiator_blockage.csv"
+      ],
+      "fault_labels": {
+        "MINOR_OVERHEAT": 9842,
+        "NORMAL_OPERATIONS": 35796,
+        "CRITICAL_OVERHEAT": 8751,
+        "COOLANT_SYSTEM_LEAK": 8816,
+        "RADIATOR_BLOCKAGE": 8795
+      },
+      "flight_phases": {
+        "CRUISE": 47280,
+        "CLIMB": 9600,
+        "DESCENT": 9600,
+        "WARMUP": 3120,
+        "LANDING": 1920,
+        "STARTUP": 240,
+        "TAKEOFF": 240
+      },
+      "schema_count": 1
+    },
+    "aerodynamics_sensor_anomalies": {
+      "file_count": 6,
+      "total_rows": 54000,
+      "files": [
+        "flight_044_pitot_blockage.csv",
+        "flight_045_pitot_blockage.csv",
+        "flight_046_elevator_binding.csv",
+        "flight_047_elevator_binding.csv",
+        "flight_048_oat_sensor_fail.csv",
+        "flight_049_oat_sensor_fail.csv"
+      ],
+      "fault_labels": {
+        "PITOT_TUBE_BLOCKAGE": 9409,
+        "NORMAL_OPERATIONS": 24900,
+        "ELEVATOR_BINDING": 10153,
+        "OAT_SENSOR_FAILURE": 9538
+      },
+      "flight_phases": {
+        "CRUISE": 35460,
+        "CLIMB": 7200,
+        "DESCENT": 7200,
+        "WARMUP": 2340,
+        "LANDING": 1440,
+        "STARTUP": 180,
+        "TAKEOFF": 180
+      },
+      "schema_count": 1
+    },
+    "electrical_anomalies": {
+      "file_count": 6,
+      "total_rows": 54000,
+      "files": [
+        "flight_038_alt1_failure.csv",
+        "flight_039_alt1_failure.csv",
+        "flight_040_ecu_lane_a_fail.csv",
+        "flight_041_ecu_lane_a_fail.csv",
+        "flight_042_main_bus_short.csv",
+        "flight_043_main_bus_short.csv"
+      ],
+      "fault_labels": {
+        "NORMAL_OPERATIONS": 27196,
+        "ALTERNATOR_1_FAILURE": 9083,
+        "ECU_LANE_A_FAILURE": 8935,
+        "MAIN_BUS_SHORT_CIRCUIT": 8786
+      },
+      "flight_phases": {
+        "CRUISE": 35460,
+        "CLIMB": 7200,
+        "DESCENT": 7200,
+        "WARMUP": 2340,
+        "LANDING": 1440,
+        "STARTUP": 180,
+        "TAKEOFF": 180
+      },
+      "schema_count": 1
+    },
+    "fluid_fuel_anomalies": {
+      "file_count": 6,
+      "total_rows": 54000,
+      "files": [
+        "flight_032_fuel_pump_fail.csv",
+        "flight_033_fuel_pump_fail.csv",
+        "flight_034_blocked_fuel_filter.csv",
+        "flight_035_blocked_fuel_filter.csv",
+        "flight_036_oil_leak.csv",
+        "flight_037_oil_leak.csv"
+      ],
+      "fault_labels": {
+        "NORMAL_OPERATIONS": 30025,
+        "FUEL_PUMP_FAILURE": 7416,
+        "BLOCKED_FUEL_FILTER": 7892,
+        "OIL_LEAK": 8667
+      },
+      "flight_phases": {
+        "CRUISE": 35460,
+        "CLIMB": 7200,
+        "DESCENT": 7200,
+        "WARMUP": 2340,
+        "LANDING": 1440,
+        "STARTUP": 180,
+        "TAKEOFF": 180
+      },
+      "schema_count": 1
+    },
+    "mechanical_anomalies": {
+      "file_count": 8,
+      "total_rows": 72000,
+      "files": [
+        "flight_024_minor_vib.csv",
+        "flight_025_minor_vib.csv",
+        "flight_026_severe_vib.csv",
+        "flight_027_severe_vib.csv",
+        "flight_028_gearbox_bearing.csv",
+        "flight_029_gearbox_bearing.csv",
+        "flight_030_stuck_surface.csv",
+        "flight_031_stuck_surface.csv"
+      ],
+      "fault_labels": {
+        "MINOR_VIBRATION": 8905,
+        "NORMAL_OPERATIONS": 37745,
+        "SEVERE_VIBRATION": 9872,
+        "VIBRATION_GEARBOX_BEARING": 7780,
+        "STUCK_CONTROL_SURFACE": 7698
+      },
+      "flight_phases": {
+        "CRUISE": 47280,
+        "CLIMB": 9600,
+        "DESCENT": 9600,
+        "WARMUP": 3120,
+        "LANDING": 1920,
+        "STARTUP": 240,
+        "TAKEOFF": 240
+      },
+      "schema_count": 1
+    },
+    "nominal_diagnostic_dataset": {
+      "file_count": 15,
+      "total_rows": 135000,
+      "files": [
+        "flight_001_nominal.csv",
+        "flight_002_nominal.csv",
+        "flight_003_nominal.csv",
+        "flight_004_nominal.csv",
+        "flight_005_nominal.csv",
+        "flight_006_nominal.csv",
+        "flight_007_nominal.csv",
+        "flight_008_nominal.csv",
+        "flight_009_nominal.csv",
+        "flight_010_nominal.csv",
+        "flight_011_nominal.csv",
+        "flight_012_nominal.csv",
+        "flight_013_nominal.csv",
+        "flight_014_nominal.csv",
+        "flight_015_nominal.csv"
+      ],
+      "fault_labels": {
+        "NORMAL_OPERATIONS": 135000
+      },
+      "flight_phases": {
+        "CRUISE": 88650,
+        "CLIMB": 18000,
+        "DESCENT": 18000,
+        "WARMUP": 5850,
+        "LANDING": 3600,
+        "STARTUP": 450,
+        "TAKEOFF": 450
+      },
+      "schema_count": 1
+    },
+    "spasht_official_cascades_58col": {
+      "file_count": 14,
+      "total_rows": 126000,
+      "files": [
+        "01_CASCADE_THERMAL_MECHANICAL_v1.csv",
+        "01_CASCADE_THERMAL_MECHANICAL_v2.csv",
+        "02_CASCADE_MECHANICAL_FLUID_v1.csv",
+        "02_CASCADE_MECHANICAL_FLUID_v2.csv",
+        "03_CASCADE_FLUID_THERMAL_v1.csv",
+        "03_CASCADE_FLUID_THERMAL_v2.csv",
+        "04_SENSOR_GHOSTING_v1.csv",
+        "04_SENSOR_GHOSTING_v2.csv",
+        "05_TOTAL_SYSTEM_FAILURE_v1.csv",
+        "05_TOTAL_SYSTEM_FAILURE_v2.csv",
+        "06_SIMULTANEOUS_THERMAL_ELECTRICAL_v1.csv",
+        "06_SIMULTANEOUS_THERMAL_ELECTRICAL_v2.csv",
+        "07_SIMULTANEOUS_MECHANICAL_FLUID_v1.csv",
+        "07_SIMULTANEOUS_MECHANICAL_FLUID_v2.csv"
+      ],
+      "fault_labels": {
+        "CASCADE_THERMAL_MECHANICAL": 12000,
+        "NORMAL_OPERATIONS": 37004,
+        "CASCADE_MECHANICAL_FLUID": 14000,
+        "CASCADE_FLUID_THERMAL": 10000,
+        "SENSOR_GHOSTING": 16000,
+        "TOTAL_SYSTEM_FAILURE": 17000,
+        "SIMULTANEOUS_THERMAL_ELECTRICAL": 9998,
+        "SIMULTANEOUS_MECHANICAL_FLUID": 9998
+      },
+      "flight_phases": {
+        "CRUISE": 93240,
+        "DESCENT": 10080,
+        "CLIMB": 8400,
+        "LANDING": 6720,
+        "WARMUP": 4200,
+        "STARTUP": 2520,
+        "TAKEOFF": 840
+      },
+      "schema_count": 1
+    }
+  },
+  "column_ranges": {
+    "flight.phase": {
+      "min": null,
+      "max": null,
+      "dtype": "str"
+    },
+    "env.oat": {
+      "min": -40.16409696307621,
+      "max": 25.615393056138625,
+      "dtype": "float64"
+    },
+    "env.wind_vector": {
+      "min": 4.771560655456215,
+      "max": 25.40852404971291,
+      "dtype": "float64"
+    },
+    "flight.airspeed_ktas": {
+      "min": -6.323290303212032,
+      "max": 126.48000759630442,
+      "dtype": "float64"
+    },
+    "flight.barometric_altitude": {
+      "min": -5.453448173517627,
+      "max": 30006.300102966303,
+      "dtype": "float64"
+    },
+    "flight.elevator_angle": {
+      "min": -4.420352545000977,
+      "max": 5.20053389008173,
+      "dtype": "float64"
+    },
+    "flight.elevator_load": {
+      "min": -3.635698954002885,
+      "max": 319.61457198945607,
+      "dtype": "float64"
+    },
+    "flight.rudder_angle": {
+      "min": -1.1221078285079356,
+      "max": 1.1209232004495042,
+      "dtype": "float64"
+    },
+    "flight.rudder_load": {
+      "min": -2.451450983639605,
+      "max": 33.15787385076888,
+      "dtype": "float64"
+    },
+    "flight.aileron_angle": {
+      "min": -1.49545182564487,
+      "max": 1.6106458726990796,
+      "dtype": "float64"
+    },
+    "flight.aileron_load": {
+      "min": -3.0243457369351794,
+      "max": 44.93096384670399,
+      "dtype": "float64"
+    },
+    "flight.flap_position": {
+      "min": 0.0,
+      "max": 30.0,
+      "dtype": "float64"
+    },
+    "flight.landing_gear_status": {
+      "min": 0.0,
+      "max": 1.0,
+      "dtype": "int64"
+    },
+    "flight.weight_on_wheels": {
+      "min": 0.0,
+      "max": 1.0,
+      "dtype": "int64"
+    },
+    "nav.gps_lat": {
+      "min": 31.99952133177593,
+      "max": 38.16844116749477,
+      "dtype": "float64"
+    },
+    "nav.gps_lon": {
+      "min": -122.4194,
+      "max": 34.0004680858965,
+      "dtype": "float64"
+    },
+    "nav.ground_speed": {
+      "min": -6.955619333533235,
+      "max": 139.12800835593487,
+      "dtype": "float64"
+    },
+    "nav.heading": {
+      "min": 265.0881830713066,
+      "max": 274.7932807051571,
+      "dtype": "float64"
+    },
+    "engine.rpm": {
+      "min": -1038.734401312388,
+      "max": 15000.0,
+      "dtype": "float64"
+    },
+    "propeller.rpm": {
+      "min": 0.0,
+      "max": 2393.172675930683,
+      "dtype": "float64"
+    },
+    "engine.map": {
+      "min": 14.068225642813134,
+      "max": 51.39501986211212,
+      "dtype": "float64"
+    },
+    "engine.cht_1": {
+      "min": -150.0,
+      "max": 250.0,
+      "dtype": "float64"
+    },
+    "engine.cht_2": {
+      "min": 21.77019638391302,
+      "max": 900.0,
+      "dtype": "float64"
+    },
+    "engine.cht_3": {
+      "min": 19.50280827450481,
+      "max": 250.0,
+      "dtype": "float64"
+    },
+    "engine.cht_4": {
+      "min": 20.900755869718928,
+      "max": 250.0,
+      "dtype": "float64"
+    },
+    "engine.egt_1": {
+      "min": 147.359911320054,
+      "max": 887.3186260044127,
+      "dtype": "float64"
+    },
+    "engine.egt_2": {
+      "min": 147.13047789868548,
+      "max": 886.375568352715,
+      "dtype": "float64"
+    },
+    "engine.egt_3": {
+      "min": 148.56158159334777,
+      "max": 890.707634219965,
+      "dtype": "float64"
+    },
+    "engine.egt_4": {
+      "min": 147.27848695597183,
+      "max": 891.7350150375289,
+      "dtype": "float64"
+    },
+    "engine.oil_pressure": {
+      "min": -0.2941868466525111,
+      "max": 6.230261605150746,
+      "dtype": "float64"
+    },
+    "engine.oil_temp": {
+      "min": 9.990265946775178,
+      "max": 129.02444891166533,
+      "dtype": "float64"
+    },
+    "engine.coolant_pressure": {
+      "min": -0.1343013709671435,
+      "max": 2.351877866941812,
+      "dtype": "float64"
+    },
+    "engine.coolant_temp": {
+      "min": 17.463127548799804,
+      "max": 133.02438314786895,
+      "dtype": "float64"
+    },
+    "sensor.vibration_engine_mount_x": {
+      "min": -1.0501179129899292,
+      "max": 16.077340086121243,
+      "dtype": "float64"
+    },
+    "sensor.vibration_engine_mount_y": {
+      "min": -1.3521700372700098,
+      "max": 16.212290265989505,
+      "dtype": "float64"
+    },
+    "sensor.vibration_engine_mount_z": {
+      "min": -0.5477222256906167,
+      "max": 16.099875496015354,
+      "dtype": "float64"
+    },
+    "sensor.vibration_gearbox": {
+      "min": -0.2869083702376547,
+      "max": 35.0,
+      "dtype": "float64"
+    },
+    "sensor.magnetic_chip_detector_mcd": {
+      "min": 0.0,
+      "max": 1.0,
+      "dtype": "int64"
+    },
+    "fuel.flow_rate": {
+      "min": -2.234254275447741,
+      "max": 45.51599136133263,
+      "dtype": "float64"
+    },
+    "fuel.total_fuel": {
+      "min": 65.4294900192671,
+      "max": 200.0,
+      "dtype": "float64"
+    },
+    "fuel.injector_pulse_width": {
+      "min": -0.3170850031999768,
+      "max": 14.260243315654996,
+      "dtype": "float64"
+    },
+    "fuel.pump_primary_status": {
+      "min": 0.0,
+      "max": 1.0,
+      "dtype": "int64"
+    },
+    "fuel.pump_secondary_status": {
+      "min": 0.0,
+      "max": 1.0,
+      "dtype": "int64"
+    },
+    "ignition.coil_voltage": {
+      "min": 0.0,
+      "max": 14.681484852679034,
+      "dtype": "float64"
+    },
+    "ignition.spark_misfire_flags": {
+      "min": 0.0,
+      "max": 0.0,
+      "dtype": "int64"
+    },
+    "engine.oil_scavenge_pump_rate": {
+      "min": 0.0,
+      "max": 4640.0,
+      "dtype": "float64"
+    },
+    "engine.water_pump_speed": {
+      "min": 0.0,
+      "max": 5220.0,
+      "dtype": "float64"
+    },
+    "electrical.main_bus_voltage": {
+      "min": 0.0,
+      "max": 28.896910572814797,
+      "dtype": "float64"
+    },
+    "electrical.main_bus_current": {
+      "min": 6.545418488490144,
+      "max": 112.1369043937113,
+      "dtype": "float64"
+    },
+    "electrical.alternator_1_current": {
+      "min": -1.3809447650851432,
+      "max": 29.88001659640005,
+      "dtype": "float64"
+    },
+    "electrical.alternator_2_current": {
+      "min": -1.517372465995142,
+      "max": 24.17875304302716,
+      "dtype": "float64"
+    },
+    "electrical.ecu_lane_a_status": {
+      "min": 0.0,
+      "max": 1.0,
+      "dtype": "int64"
+    },
+    "electrical.ecu_lane_b_status": {
+      "min": 1.0,
+      "max": 1.0,
+      "dtype": "int64"
+    },
+    "electrical.sensor_reference_5v": {
+      "min": 3.2,
+      "max": 5.047061261092431,
+      "dtype": "float64"
+    },
+    "anomaly_score_thermal": {
+      "min": 0.0,
+      "max": 0.99,
+      "dtype": "float64"
+    },
+    "anomaly_score_mechanical": {
+      "min": 0.0,
+      "max": 0.99,
+      "dtype": "float64"
+    },
+    "anomaly_score_electrical": {
+      "min": 0.0,
+      "max": 0.99,
+      "dtype": "float64"
+    },
+    "fault_label": {
+      "min": null,
+      "max": null,
+      "dtype": "str"
+    }
+  },
+  "files": [
+    {
+      "file_path": "data/diagnostic_dataset/Thermal Anomalies/flight_016_minor_overheat.csv",
+      "file_name": "flight_016_minor_overheat.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "MINOR_OVERHEAT": 5386,
+        "NORMAL_OPERATIONS": 3614
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/Thermal Anomalies/flight_017_minor_overheat.csv",
+      "file_name": "flight_017_minor_overheat.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4544,
+        "MINOR_OVERHEAT": 4456
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/Thermal Anomalies/flight_018_critical_overheat.csv",
+      "file_name": "flight_018_critical_overheat.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4601,
+        "CRITICAL_OVERHEAT": 4399
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/Thermal Anomalies/flight_019_critical_overheat.csv",
+      "file_name": "flight_019_critical_overheat.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4648,
+        "CRITICAL_OVERHEAT": 4352
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/Thermal Anomalies/flight_020_coolant_leak.csv",
+      "file_name": "flight_020_coolant_leak.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "COOLANT_SYSTEM_LEAK": 5038,
+        "NORMAL_OPERATIONS": 3962
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/Thermal Anomalies/flight_021_coolant_leak.csv",
+      "file_name": "flight_021_coolant_leak.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 5222,
+        "COOLANT_SYSTEM_LEAK": 3778
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/Thermal Anomalies/flight_022_radiator_blockage.csv",
+      "file_name": "flight_022_radiator_blockage.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 5229,
+        "RADIATOR_BLOCKAGE": 3771
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/Thermal Anomalies/flight_023_radiator_blockage.csv",
+      "file_name": "flight_023_radiator_blockage.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "RADIATOR_BLOCKAGE": 5024,
+        "NORMAL_OPERATIONS": 3976
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/aerodynamics_sensor_anomalies/flight_044_pitot_blockage.csv",
+      "file_name": "flight_044_pitot_blockage.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "PITOT_TUBE_BLOCKAGE": 4918,
+        "NORMAL_OPERATIONS": 4082
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/aerodynamics_sensor_anomalies/flight_045_pitot_blockage.csv",
+      "file_name": "flight_045_pitot_blockage.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4509,
+        "PITOT_TUBE_BLOCKAGE": 4491
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/aerodynamics_sensor_anomalies/flight_046_elevator_binding.csv",
+      "file_name": "flight_046_elevator_binding.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "ELEVATOR_BINDING": 4858,
+        "NORMAL_OPERATIONS": 4142
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/aerodynamics_sensor_anomalies/flight_047_elevator_binding.csv",
+      "file_name": "flight_047_elevator_binding.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "ELEVATOR_BINDING": 5295,
+        "NORMAL_OPERATIONS": 3705
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/aerodynamics_sensor_anomalies/flight_048_oat_sensor_fail.csv",
+      "file_name": "flight_048_oat_sensor_fail.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "OAT_SENSOR_FAILURE": 4718,
+        "NORMAL_OPERATIONS": 4282
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/aerodynamics_sensor_anomalies/flight_049_oat_sensor_fail.csv",
+      "file_name": "flight_049_oat_sensor_fail.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "OAT_SENSOR_FAILURE": 4820,
+        "NORMAL_OPERATIONS": 4180
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/electrical_anomalies/flight_038_alt1_failure.csv",
+      "file_name": "flight_038_alt1_failure.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4832,
+        "ALTERNATOR_1_FAILURE": 4168
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/electrical_anomalies/flight_039_alt1_failure.csv",
+      "file_name": "flight_039_alt1_failure.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "ALTERNATOR_1_FAILURE": 4915,
+        "NORMAL_OPERATIONS": 4085
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/electrical_anomalies/flight_040_ecu_lane_a_fail.csv",
+      "file_name": "flight_040_ecu_lane_a_fail.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4569,
+        "ECU_LANE_A_FAILURE": 4431
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/electrical_anomalies/flight_041_ecu_lane_a_fail.csv",
+      "file_name": "flight_041_ecu_lane_a_fail.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "ECU_LANE_A_FAILURE": 4504,
+        "NORMAL_OPERATIONS": 4496
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/electrical_anomalies/flight_042_main_bus_short.csv",
+      "file_name": "flight_042_main_bus_short.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4668,
+        "MAIN_BUS_SHORT_CIRCUIT": 4332
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/electrical_anomalies/flight_043_main_bus_short.csv",
+      "file_name": "flight_043_main_bus_short.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4546,
+        "MAIN_BUS_SHORT_CIRCUIT": 4454
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/fluid_fuel_anomalies/flight_032_fuel_pump_fail.csv",
+      "file_name": "flight_032_fuel_pump_fail.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 5350,
+        "FUEL_PUMP_FAILURE": 3650
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/fluid_fuel_anomalies/flight_033_fuel_pump_fail.csv",
+      "file_name": "flight_033_fuel_pump_fail.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 5234,
+        "FUEL_PUMP_FAILURE": 3766
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/fluid_fuel_anomalies/flight_034_blocked_fuel_filter.csv",
+      "file_name": "flight_034_blocked_fuel_filter.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 5230,
+        "BLOCKED_FUEL_FILTER": 3770
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/fluid_fuel_anomalies/flight_035_blocked_fuel_filter.csv",
+      "file_name": "flight_035_blocked_fuel_filter.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4878,
+        "BLOCKED_FUEL_FILTER": 4122
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/fluid_fuel_anomalies/flight_036_oil_leak.csv",
+      "file_name": "flight_036_oil_leak.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 5180,
+        "OIL_LEAK": 3820
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/fluid_fuel_anomalies/flight_037_oil_leak.csv",
+      "file_name": "flight_037_oil_leak.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "OIL_LEAK": 4847,
+        "NORMAL_OPERATIONS": 4153
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/mechanical_anomalies/flight_024_minor_vib.csv",
+      "file_name": "flight_024_minor_vib.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "MINOR_VIBRATION": 5252,
+        "NORMAL_OPERATIONS": 3748
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/mechanical_anomalies/flight_025_minor_vib.csv",
+      "file_name": "flight_025_minor_vib.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 5347,
+        "MINOR_VIBRATION": 3653
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/mechanical_anomalies/flight_026_severe_vib.csv",
+      "file_name": "flight_026_severe_vib.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "SEVERE_VIBRATION": 4521,
+        "NORMAL_OPERATIONS": 4479
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/mechanical_anomalies/flight_027_severe_vib.csv",
+      "file_name": "flight_027_severe_vib.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "SEVERE_VIBRATION": 5351,
+        "NORMAL_OPERATIONS": 3649
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/mechanical_anomalies/flight_028_gearbox_bearing.csv",
+      "file_name": "flight_028_gearbox_bearing.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4928,
+        "VIBRATION_GEARBOX_BEARING": 4072
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/mechanical_anomalies/flight_029_gearbox_bearing.csv",
+      "file_name": "flight_029_gearbox_bearing.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 5292,
+        "VIBRATION_GEARBOX_BEARING": 3708
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/mechanical_anomalies/flight_030_stuck_surface.csv",
+      "file_name": "flight_030_stuck_surface.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 4942,
+        "STUCK_CONTROL_SURFACE": 4058
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/mechanical_anomalies/flight_031_stuck_surface.csv",
+      "file_name": "flight_031_stuck_surface.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 5360,
+        "STUCK_CONTROL_SURFACE": 3640
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_001_nominal.csv",
+      "file_name": "flight_001_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_002_nominal.csv",
+      "file_name": "flight_002_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_003_nominal.csv",
+      "file_name": "flight_003_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_004_nominal.csv",
+      "file_name": "flight_004_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_005_nominal.csv",
+      "file_name": "flight_005_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_006_nominal.csv",
+      "file_name": "flight_006_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_007_nominal.csv",
+      "file_name": "flight_007_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_008_nominal.csv",
+      "file_name": "flight_008_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_009_nominal.csv",
+      "file_name": "flight_009_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_010_nominal.csv",
+      "file_name": "flight_010_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_011_nominal.csv",
+      "file_name": "flight_011_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_012_nominal.csv",
+      "file_name": "flight_012_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_013_nominal.csv",
+      "file_name": "flight_013_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_014_nominal.csv",
+      "file_name": "flight_014_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/nominal_diagnostic_dataset/flight_015_nominal.csv",
+      "file_name": "flight_015_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "NORMAL_OPERATIONS": 9000
+      },
+      "phase_counts": {
+        "CRUISE": 5910,
+        "CLIMB": 1200,
+        "DESCENT": 1200,
+        "WARMUP": 390,
+        "LANDING": 240,
+        "STARTUP": 30,
+        "TAKEOFF": 30
+      },
+      "phase_col_name": "flight.phase"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/01_CASCADE_THERMAL_MECHANICAL_v1.csv",
+      "file_name": "01_CASCADE_THERMAL_MECHANICAL_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "CASCADE_THERMAL_MECHANICAL": 6000,
+        "NORMAL_OPERATIONS": 3000
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/01_CASCADE_THERMAL_MECHANICAL_v2.csv",
+      "file_name": "01_CASCADE_THERMAL_MECHANICAL_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "CASCADE_THERMAL_MECHANICAL": 6000,
+        "NORMAL_OPERATIONS": 3000
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/02_CASCADE_MECHANICAL_FLUID_v1.csv",
+      "file_name": "02_CASCADE_MECHANICAL_FLUID_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "CASCADE_MECHANICAL_FLUID": 7000,
+        "NORMAL_OPERATIONS": 2000
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/02_CASCADE_MECHANICAL_FLUID_v2.csv",
+      "file_name": "02_CASCADE_MECHANICAL_FLUID_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "CASCADE_MECHANICAL_FLUID": 7000,
+        "NORMAL_OPERATIONS": 2000
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/03_CASCADE_FLUID_THERMAL_v1.csv",
+      "file_name": "03_CASCADE_FLUID_THERMAL_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "CASCADE_FLUID_THERMAL": 5000,
+        "NORMAL_OPERATIONS": 4000
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/03_CASCADE_FLUID_THERMAL_v2.csv",
+      "file_name": "03_CASCADE_FLUID_THERMAL_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "CASCADE_FLUID_THERMAL": 5000,
+        "NORMAL_OPERATIONS": 4000
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/04_SENSOR_GHOSTING_v1.csv",
+      "file_name": "04_SENSOR_GHOSTING_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "SENSOR_GHOSTING": 8000,
+        "NORMAL_OPERATIONS": 1000
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/04_SENSOR_GHOSTING_v2.csv",
+      "file_name": "04_SENSOR_GHOSTING_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "SENSOR_GHOSTING": 8000,
+        "NORMAL_OPERATIONS": 1000
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/05_TOTAL_SYSTEM_FAILURE_v1.csv",
+      "file_name": "05_TOTAL_SYSTEM_FAILURE_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "TOTAL_SYSTEM_FAILURE": 8500,
+        "NORMAL_OPERATIONS": 500
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/05_TOTAL_SYSTEM_FAILURE_v2.csv",
+      "file_name": "05_TOTAL_SYSTEM_FAILURE_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "TOTAL_SYSTEM_FAILURE": 8500,
+        "NORMAL_OPERATIONS": 500
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/06_SIMULTANEOUS_THERMAL_ELECTRICAL_v1.csv",
+      "file_name": "06_SIMULTANEOUS_THERMAL_ELECTRICAL_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "SIMULTANEOUS_THERMAL_ELECTRICAL": 4999,
+        "NORMAL_OPERATIONS": 4001
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/06_SIMULTANEOUS_THERMAL_ELECTRICAL_v2.csv",
+      "file_name": "06_SIMULTANEOUS_THERMAL_ELECTRICAL_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "SIMULTANEOUS_THERMAL_ELECTRICAL": 4999,
+        "NORMAL_OPERATIONS": 4001
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/07_SIMULTANEOUS_MECHANICAL_FLUID_v1.csv",
+      "file_name": "07_SIMULTANEOUS_MECHANICAL_FLUID_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "SIMULTANEOUS_MECHANICAL_FLUID": 4999,
+        "NORMAL_OPERATIONS": 4001
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    },
+    {
+      "file_path": "data/diagnostic_dataset/spasht_official_cascades_58col/07_SIMULTANEOUS_MECHANICAL_FLUID_v2.csv",
+      "file_name": "07_SIMULTANEOUS_MECHANICAL_FLUID_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "cols": 58,
+      "nulls": 0,
+      "infs": 0,
+      "duplicates": 0,
+      "fault_counts": {
+        "SIMULTANEOUS_MECHANICAL_FLUID": 4999,
+        "NORMAL_OPERATIONS": 4001
+      },
+      "phase_counts": {
+        "CRUISE": 6660,
+        "DESCENT": 720,
+        "CLIMB": 600,
+        "LANDING": 480,
+        "WARMUP": 300,
+        "STARTUP": 180,
+        "TAKEOFF": 60
+      },
+      "phase_col_name": "flags"
+    }
+  ],
+  "file_transitions": [
+    {
+      "file": "flight_016_minor_overheat.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 3614,
+          "label": "MINOR_OVERHEAT",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "MINOR_OVERHEAT": 5386,
+        "NORMAL_OPERATIONS": 3614
+      }
+    },
+    {
+      "file": "flight_017_minor_overheat.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4544,
+          "label": "MINOR_OVERHEAT",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4544,
+        "MINOR_OVERHEAT": 4456
+      }
+    },
+    {
+      "file": "flight_018_critical_overheat.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4601,
+          "label": "CRITICAL_OVERHEAT",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4601,
+        "CRITICAL_OVERHEAT": 4399
+      }
+    },
+    {
+      "file": "flight_019_critical_overheat.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4648,
+          "label": "CRITICAL_OVERHEAT",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4648,
+        "CRITICAL_OVERHEAT": 4352
+      }
+    },
+    {
+      "file": "flight_020_coolant_leak.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 3962,
+          "label": "COOLANT_SYSTEM_LEAK",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "COOLANT_SYSTEM_LEAK": 5038,
+        "NORMAL_OPERATIONS": 3962
+      }
+    },
+    {
+      "file": "flight_021_coolant_leak.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 5222,
+          "label": "COOLANT_SYSTEM_LEAK",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 5222,
+        "COOLANT_SYSTEM_LEAK": 3778
+      }
+    },
+    {
+      "file": "flight_022_radiator_blockage.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 5229,
+          "label": "RADIATOR_BLOCKAGE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 5229,
+        "RADIATOR_BLOCKAGE": 3771
+      }
+    },
+    {
+      "file": "flight_023_radiator_blockage.csv",
+      "folder": "Thermal Anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 3976,
+          "label": "RADIATOR_BLOCKAGE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "RADIATOR_BLOCKAGE": 5024,
+        "NORMAL_OPERATIONS": 3976
+      }
+    },
+    {
+      "file": "flight_044_pitot_blockage.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4082,
+          "label": "PITOT_TUBE_BLOCKAGE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "PITOT_TUBE_BLOCKAGE": 4918,
+        "NORMAL_OPERATIONS": 4082
+      }
+    },
+    {
+      "file": "flight_045_pitot_blockage.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4509,
+          "label": "PITOT_TUBE_BLOCKAGE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4509,
+        "PITOT_TUBE_BLOCKAGE": 4491
+      }
+    },
+    {
+      "file": "flight_046_elevator_binding.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4142,
+          "label": "ELEVATOR_BINDING",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "ELEVATOR_BINDING": 4858,
+        "NORMAL_OPERATIONS": 4142
+      }
+    },
+    {
+      "file": "flight_047_elevator_binding.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 3705,
+          "label": "ELEVATOR_BINDING",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "ELEVATOR_BINDING": 5295,
+        "NORMAL_OPERATIONS": 3705
+      }
+    },
+    {
+      "file": "flight_048_oat_sensor_fail.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4282,
+          "label": "OAT_SENSOR_FAILURE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "OAT_SENSOR_FAILURE": 4718,
+        "NORMAL_OPERATIONS": 4282
+      }
+    },
+    {
+      "file": "flight_049_oat_sensor_fail.csv",
+      "folder": "aerodynamics_sensor_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4180,
+          "label": "OAT_SENSOR_FAILURE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "OAT_SENSOR_FAILURE": 4820,
+        "NORMAL_OPERATIONS": 4180
+      }
+    },
+    {
+      "file": "flight_038_alt1_failure.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4832,
+          "label": "ALTERNATOR_1_FAILURE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4832,
+        "ALTERNATOR_1_FAILURE": 4168
+      }
+    },
+    {
+      "file": "flight_039_alt1_failure.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4085,
+          "label": "ALTERNATOR_1_FAILURE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "ALTERNATOR_1_FAILURE": 4915,
+        "NORMAL_OPERATIONS": 4085
+      }
+    },
+    {
+      "file": "flight_040_ecu_lane_a_fail.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4569,
+          "label": "ECU_LANE_A_FAILURE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4569,
+        "ECU_LANE_A_FAILURE": 4431
+      }
+    },
+    {
+      "file": "flight_041_ecu_lane_a_fail.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4496,
+          "label": "ECU_LANE_A_FAILURE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "ECU_LANE_A_FAILURE": 4504,
+        "NORMAL_OPERATIONS": 4496
+      }
+    },
+    {
+      "file": "flight_042_main_bus_short.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4668,
+          "label": "MAIN_BUS_SHORT_CIRCUIT",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4668,
+        "MAIN_BUS_SHORT_CIRCUIT": 4332
+      }
+    },
+    {
+      "file": "flight_043_main_bus_short.csv",
+      "folder": "electrical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4546,
+          "label": "MAIN_BUS_SHORT_CIRCUIT",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4546,
+        "MAIN_BUS_SHORT_CIRCUIT": 4454
+      }
+    },
+    {
+      "file": "flight_032_fuel_pump_fail.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 5350,
+          "label": "FUEL_PUMP_FAILURE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 5350,
+        "FUEL_PUMP_FAILURE": 3650
+      }
+    },
+    {
+      "file": "flight_033_fuel_pump_fail.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 5234,
+          "label": "FUEL_PUMP_FAILURE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 5234,
+        "FUEL_PUMP_FAILURE": 3766
+      }
+    },
+    {
+      "file": "flight_034_blocked_fuel_filter.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 5230,
+          "label": "BLOCKED_FUEL_FILTER",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 5230,
+        "BLOCKED_FUEL_FILTER": 3770
+      }
+    },
+    {
+      "file": "flight_035_blocked_fuel_filter.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4878,
+          "label": "BLOCKED_FUEL_FILTER",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4878,
+        "BLOCKED_FUEL_FILTER": 4122
+      }
+    },
+    {
+      "file": "flight_036_oil_leak.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 5180,
+          "label": "OIL_LEAK",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 5180,
+        "OIL_LEAK": 3820
+      }
+    },
+    {
+      "file": "flight_037_oil_leak.csv",
+      "folder": "fluid_fuel_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4153,
+          "label": "OIL_LEAK",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "OIL_LEAK": 4847,
+        "NORMAL_OPERATIONS": 4153
+      }
+    },
+    {
+      "file": "flight_024_minor_vib.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 3748,
+          "label": "MINOR_VIBRATION",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "MINOR_VIBRATION": 5252,
+        "NORMAL_OPERATIONS": 3748
+      }
+    },
+    {
+      "file": "flight_025_minor_vib.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 5347,
+          "label": "MINOR_VIBRATION",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 5347,
+        "MINOR_VIBRATION": 3653
+      }
+    },
+    {
+      "file": "flight_026_severe_vib.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4479,
+          "label": "SEVERE_VIBRATION",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "SEVERE_VIBRATION": 4521,
+        "NORMAL_OPERATIONS": 4479
+      }
+    },
+    {
+      "file": "flight_027_severe_vib.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 3649,
+          "label": "SEVERE_VIBRATION",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "SEVERE_VIBRATION": 5351,
+        "NORMAL_OPERATIONS": 3649
+      }
+    },
+    {
+      "file": "flight_028_gearbox_bearing.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4928,
+          "label": "VIBRATION_GEARBOX_BEARING",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4928,
+        "VIBRATION_GEARBOX_BEARING": 4072
+      }
+    },
+    {
+      "file": "flight_029_gearbox_bearing.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 5292,
+          "label": "VIBRATION_GEARBOX_BEARING",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 5292,
+        "VIBRATION_GEARBOX_BEARING": 3708
+      }
+    },
+    {
+      "file": "flight_030_stuck_surface.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4942,
+          "label": "STUCK_CONTROL_SURFACE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 4942,
+        "STUCK_CONTROL_SURFACE": 4058
+      }
+    },
+    {
+      "file": "flight_031_stuck_surface.csv",
+      "folder": "mechanical_anomalies",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 5360,
+          "label": "STUCK_CONTROL_SURFACE",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 5360,
+        "STUCK_CONTROL_SURFACE": 3640
+      }
+    },
+    {
+      "file": "flight_001_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_002_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_003_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_004_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_005_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_006_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_007_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_008_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_009_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_010_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_011_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_012_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_013_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_014_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "flight_015_nominal.csv",
+      "folder": "nominal_diagnostic_dataset",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        }
+      ],
+      "fault_distribution": {
+        "NORMAL_OPERATIONS": 9000
+      }
+    },
+    {
+      "file": "01_CASCADE_THERMAL_MECHANICAL_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 3000,
+          "label": "CASCADE_THERMAL_MECHANICAL",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "CASCADE_THERMAL_MECHANICAL": 6000,
+        "NORMAL_OPERATIONS": 3000
+      }
+    },
+    {
+      "file": "01_CASCADE_THERMAL_MECHANICAL_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 3000,
+          "label": "CASCADE_THERMAL_MECHANICAL",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "CASCADE_THERMAL_MECHANICAL": 6000,
+        "NORMAL_OPERATIONS": 3000
+      }
+    },
+    {
+      "file": "02_CASCADE_MECHANICAL_FLUID_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 2000,
+          "label": "CASCADE_MECHANICAL_FLUID",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "CASCADE_MECHANICAL_FLUID": 7000,
+        "NORMAL_OPERATIONS": 2000
+      }
+    },
+    {
+      "file": "02_CASCADE_MECHANICAL_FLUID_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 2000,
+          "label": "CASCADE_MECHANICAL_FLUID",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "CASCADE_MECHANICAL_FLUID": 7000,
+        "NORMAL_OPERATIONS": 2000
+      }
+    },
+    {
+      "file": "03_CASCADE_FLUID_THERMAL_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4000,
+          "label": "CASCADE_FLUID_THERMAL",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "CASCADE_FLUID_THERMAL": 5000,
+        "NORMAL_OPERATIONS": 4000
+      }
+    },
+    {
+      "file": "03_CASCADE_FLUID_THERMAL_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4000,
+          "label": "CASCADE_FLUID_THERMAL",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "CASCADE_FLUID_THERMAL": 5000,
+        "NORMAL_OPERATIONS": 4000
+      }
+    },
+    {
+      "file": "04_SENSOR_GHOSTING_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 1000,
+          "label": "SENSOR_GHOSTING",
+          "phase": "CLIMB"
+        }
+      ],
+      "fault_distribution": {
+        "SENSOR_GHOSTING": 8000,
+        "NORMAL_OPERATIONS": 1000
+      }
+    },
+    {
+      "file": "04_SENSOR_GHOSTING_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 1000,
+          "label": "SENSOR_GHOSTING",
+          "phase": "CLIMB"
+        }
+      ],
+      "fault_distribution": {
+        "SENSOR_GHOSTING": 8000,
+        "NORMAL_OPERATIONS": 1000
+      }
+    },
+    {
+      "file": "05_TOTAL_SYSTEM_FAILURE_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 500,
+          "label": "TOTAL_SYSTEM_FAILURE",
+          "phase": "TAKEOFF"
+        }
+      ],
+      "fault_distribution": {
+        "TOTAL_SYSTEM_FAILURE": 8500,
+        "NORMAL_OPERATIONS": 500
+      }
+    },
+    {
+      "file": "05_TOTAL_SYSTEM_FAILURE_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 500,
+          "label": "TOTAL_SYSTEM_FAILURE",
+          "phase": "TAKEOFF"
+        }
+      ],
+      "fault_distribution": {
+        "TOTAL_SYSTEM_FAILURE": 8500,
+        "NORMAL_OPERATIONS": 500
+      }
+    },
+    {
+      "file": "06_SIMULTANEOUS_THERMAL_ELECTRICAL_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4001,
+          "label": "SIMULTANEOUS_THERMAL_ELECTRICAL",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "SIMULTANEOUS_THERMAL_ELECTRICAL": 4999,
+        "NORMAL_OPERATIONS": 4001
+      }
+    },
+    {
+      "file": "06_SIMULTANEOUS_THERMAL_ELECTRICAL_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4001,
+          "label": "SIMULTANEOUS_THERMAL_ELECTRICAL",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "SIMULTANEOUS_THERMAL_ELECTRICAL": 4999,
+        "NORMAL_OPERATIONS": 4001
+      }
+    },
+    {
+      "file": "07_SIMULTANEOUS_MECHANICAL_FLUID_v1.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4001,
+          "label": "SIMULTANEOUS_MECHANICAL_FLUID",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "SIMULTANEOUS_MECHANICAL_FLUID": 4999,
+        "NORMAL_OPERATIONS": 4001
+      }
+    },
+    {
+      "file": "07_SIMULTANEOUS_MECHANICAL_FLUID_v2.csv",
+      "folder": "spasht_official_cascades_58col",
+      "rows": 9000,
+      "transitions": [
+        {
+          "start_row": 0,
+          "label": "NORMAL_OPERATIONS",
+          "phase": "STARTUP"
+        },
+        {
+          "start_row": 4001,
+          "label": "SIMULTANEOUS_MECHANICAL_FLUID",
+          "phase": "CRUISE"
+        }
+      ],
+      "fault_distribution": {
+        "SIMULTANEOUS_MECHANICAL_FLUID": 4999,
+        "NORMAL_OPERATIONS": 4001
+      }
+    }
+  ]
+}

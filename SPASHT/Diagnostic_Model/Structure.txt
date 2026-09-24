@@ -1,0 +1,44 @@
+Diagnostic Model/
+│
+├── README.md
+│
+├── docs/
+│   ├── Diagnostic_Model_Guide.md
+│   ├── Diagnostic_Step1_Data_Prep.md
+│   ├── Diagnostic_Step2_XGBoost_Training.md
+│   ├── Diagnostic_Step3_ONNX_Export.md
+│   ├── diagnostic_xgboost_training.md
+│   └── 2_Diagnostic_IO_Mapping.md
+│
+├── data/
+│   ├── raw/
+│   │   └── DIAGNOSTIC MODEL.zip
+│   │
+│   └── diagnostic_dataset/
+│       ├── flight_001_*.csv
+│       ├── flight_002_*.csv
+│       ├── ...
+│       └── all remaining CSVs
+│
+├── src/
+│   ├── audit_dataset.py
+│   ├── prepare_data.py
+│   ├── train_model.py
+│   ├── evaluate_model.py
+│   ├── export_onnx.py
+│   └── validate_onnx.py
+│
+├── artifacts/
+│   ├── diagnostic_xgboost_v1.onnx
+│   ├── fault_label_encoder.pkl
+│   ├── feature_schema.json
+│   └── manifest.json
+│
+├── reports/
+│   ├── dataset_audit.json
+│   ├── evaluation_report.txt
+│   ├── confusion_matrix.png
+│   └── feature_importance.png
+│
+└── notebooks/
+    └── diagnostic_training.ipynb
