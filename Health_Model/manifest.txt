@@ -1,0 +1,7 @@
+{
+  "model_name": "SPASHT-Health-Anomaly",
+  "version": "1.4",
+  "framework": "ONNX",
+  "target_engine": "Rotax_915iS_C24",
+  "target_airframe": "IAI_Heron_MK2"
+}
